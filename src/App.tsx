@@ -1,20 +1,19 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-
+import "./App.css";
+import "./dist/output.css";
+import SpecsList from "./layout/SpecsList/SpecsList";
+import SpecsForm from "./layout/SpecsForm/SpecsForm";
+import "antd/dist/antd.css";
 
 function App() {
   return (
-    <Router>
-    <Navbar />
-    <Routes >
-      <Route path='/' element={<Home/>}/>
-   
-    </Routes>
-  
-  </Router>
+    <>
+      <div className="w-10/12 mx-auto">
+        <div className="justify-between mt-10 flex w-full">
+          <SpecsList />
+          <SpecsForm />
+        </div>
+      </div>
+    </>
   );
 }
 
