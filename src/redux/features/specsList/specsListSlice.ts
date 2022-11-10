@@ -2,27 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { SpecsContextInterface } from "../../../interfaces/Specs";
 import { RootState } from "../../store";
 
+const sport_car = new SpecsContextInterface();
+      sport_car.setName("Sport");
+
+const prestige_car = new SpecsContextInterface();
+      prestige_car.setName("Prestige");
+
 const initialState: SpecsContextInterface[] = [
-  {
-    name: "Sport",
-    color: "White",
-    interior: "Leather",
-    AirSuspension: true,
-    engine: "3.5L",
-    rims: "20 inches",
-    signature: "fast and furious",
-    typeOfWheels: "BBS",
-  },
-  {
-    name: "Prestige",
-    color: "White",
-    interior: "Leather",
-    AirSuspension: true,
-    engine: "3.5L",
-    rims: "20 inches",
-    signature: "fast and furious",
-    typeOfWheels: "BBS",
-  },
+  sport_car,
+  prestige_car,
 ];
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -37,6 +25,7 @@ export const specsSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     save: (state, action: PayloadAction<SpecsContextInterface>) => {
+
       state.push(action.payload);
     },
   },
